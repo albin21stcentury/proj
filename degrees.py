@@ -105,9 +105,9 @@ def shortest_path(source, target):
         if node.state == target:
             connection = []
             while node.parent is not None:
-                answer.append((node.action, node.state))
+                connection.append((node.action, node.state))
                 node = node.parent
-            answer.reverse()
+            connection.reverse()
             return connection
         explored.add(node.state)
         for movie_id, person_id in neighbors_for_person(node.state):
